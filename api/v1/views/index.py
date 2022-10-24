@@ -18,10 +18,12 @@ import json
 classes = {"amenities": Amenity, "cities": City,
            "places": Place, "reviews": Review, "states": State, "users": User}
 
+
 @app_views.route('/status')
 def index():
     response = {"status": "OK"}
     return jsonify(response)
+
 
 @app_views.route('/stats')
 def stats():
