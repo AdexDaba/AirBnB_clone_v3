@@ -16,6 +16,12 @@ def exit(exception):
     ''' exit api in case of unexpected error '''
     storage.close()
 
+@app.errorhandler(404)
+def error404(e):
+    """ instance of app to handle 404 errors """
+    response = {"error": "Not found"}
+    return jsonify(response)
+
 if __name__ == '__main__':
     host = getenv("HBNB_API_HOST")
     port = getenv("HBNB_API_PORT")
